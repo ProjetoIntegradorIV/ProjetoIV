@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projeto Integrador II - Ciência de Dados</title>
+<link rel="icon" type="image/jpg" href="{{ url_for('static', filename='time.jpg') }}"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="myPage">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-right"></i></a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Time</a>
+  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Projeto</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Agradecimentos</a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">Time</a>
+    <a href="#work" class="w3-bar-item w3-button">Projeto</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contato</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="https://www.analyticsinsight.net/wp-content/uploads/2020/08/Data-Science-5.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-display-middle" style="white-space:nowrap;"> 
+  	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PROJETO INTEGRADOR II - CIÊNCIA DE DADOS </span>
+  </div>
+</div>
+
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>Time</h2>
+<p>Conheça nosso time:</p>
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_people_person_avatar_white_tone_icon_159363.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3> André Figueiredo
+</h3>
+  <p>Desenvolvimento</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://w7.pngwing.com/pngs/915/511/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Nayra Alencar</h3>
+  <p>Desenvolvimento</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_people_person_avatar_white_tone_icon_159363.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>William Cruz</h3>
+  <p>Desenvolvimento</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://w7.pngwing.com/pngs/915/511/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Nathalia Viana</h3>
+  <p>Desenvolvimento</p>
+</div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div class="w3-quarter">
+<h1> Análise de Crédito</h1>
+<p>A análise de crédito que consiste em identificar, através de instrumentos financeiros, matemáticos e estatísticos, a probabilidade de um cliente em pagar ou não pagar o crédito que lhe foi concedido, ou seja, a análise visa conceber uma aprovação ou reprovação de crédito com base na probabilidade de haver ou não a quitação da dívida para os usuários que desejam, por meio de empréstimos ou financiamentos, atingirem seus objetivos.
+</p>
+<p> Acesse a página de solicitação:</p>
+</p>
+<a href="{{ url_for('formulario') }}" class="w3-bar-item w3-button"><i class="fa fa-angle-right"  w3-margin-right></i> Formulário para Análise</a>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="https://www.aceguarulhos.com.br/blog/wp-content/uploads/2018/01/o-que-e-analise-credito.jpg"  style="width:100%">
+  <div class="w3-container">
+  <h3></h3>
+  <h4>Pedido do Cliente</h4>
+  <p> Ação do cliente em solicitar uma análise de crédito com entrada de dados pessoais e determinantes para solicitação.</p>
+  <br>
+  <h6>*O requerente deve realizar a entrada de dados verídicos para que assim a sua solicitação seja manipulada pelo sistema. </h6>
+
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="https://www.refi.com.br/blog/wp-content/uploads/2022/04/analise-de-credito-1024x683-1.jpg" style="width:100%">
+  <div class="w3-container">
+  <h3>Análise dos Dados</h3>
+  <p>Processo que aborda toda as análises necessárias, que utiliza como base toda uma cadeia de decisão valida para que a solicitação realizada retorne o esperado, de acordo com a entrada e precisão dos dados.   
+  </p>
+   <h6>*Sistema será o principal responsável pela análise.</h6>
+  
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="https://soliduz.com.br/wp-content/uploads/2019/03/analise_credito.jpg"  style="width:100%">
+  <div class="w3-container">
+  <h3></h3>
+  <h4>Resultado da Solicitação</h4>
+  <p>O processo final consiste no resultado da análise, onde é identificado por meio dos dados, se o solicitante tem direito ao crédito ou não.
+<br>  
+<br>
+<br>
+<br>  
+<br>
+<br>
+</div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5 w3-center" id="contact">
+  <div class="w3-center">
+   <div class="w3-container w3-padding-64 w3-center"><span class="w3-xlarge w3-border-teal w3-bottombar">Agradecimentos</span></div>
+   <div class="w3-container">
+    <div class="w3-col center">
+    <p> Aos professores, pelas correções e ensinamentos que nós permitiram apresentar um melhor desempenho neste projeto, por todo os conselhos, pela ajuda e pela paciência com a qual guiaram o nosso aprendizado.</p>
+        <p></p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

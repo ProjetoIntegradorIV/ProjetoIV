@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+<title>Análise de Crédito</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='IbidenIcon.png') }}"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="container_form.css" media="screen" />
+    <link href="/static/container_form.css" rel="stylesheet" type="text/css" />
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://d2m6ke2px6quvq.cloudfront.net/uploads/2020/07/15/8e817361-fe75-4520-815c-b438c0451d2b.jpg');
+  min-height:60%;
+  background-position: center;
+  background-position: 15% 20%;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme-d2 w3-center-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('projetoeTime') }}" class="w3-bar-item w3-button w3-center"><i class="fa fa-user-circle-o "></i>  Time&Projeto</a>
+  </div>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="{{ partial }}" class="w3-bar-item w3-button">Time&Projeto</a>
+  </div>
+</div>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-large">
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Análise de Crédito</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+  </div>
+</div>
+<form method="POST" action="/resultado">
+
+    <div class="container_form ">
+            <div class="w3-center">
+                <h3>Resultado:</h3>
+          </div>
+  </div>
+<!-- {% if classe %} -->
+			{% if classe == "Aprovado" %}
+				<div style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+                    <div style="display: table-cell; vertical-align: middle; text-align: center;">
+					    <h1 style="color: green">Aprovado</h1>
+                          <h4>Parabéns! Sua análise de dados foi aprovada! Além disso, gostaríamos de informar que, com base nesses dados, você está confirmado
+                no sistema como capaz de arcar com os custos desse crédito.  </h4>
+				    </div>
+                </div>
+
+			{% else %}
+                <div style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+                    <div style="display: table-cell; vertical-align: middle; text-align: center;">
+					    <h1 style="color: red">Reprovado</h1>
+                          <h4>Gostaríamos de informar que, após análise cuidadosa, sua análise de dados não foi aprovada. Infelizmente, com base nos dados disponíveis, não conseguimos confirmar sua capacidade
+                              de realizar o pagamento do crédito.  </h4>
+				    </div>
+                </div>
+			{% endif %}
+		<!-- {% endif %} -->
+	<!-- FIM DO CONTAINER-->
+	</div>
+    <div class="w3-center">
+        </p>
+        <a href="{{ url_for('formulario') }}" class="w3-bar-item w3-button"><i class="fa fa-mail-reply-all"  ></i> Voltar </a>
+    </div>
+</form>
+</body>
+</html>

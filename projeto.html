@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+<title>Análise de Crédito</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='IbidenIcon.png') }}"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="container_form.css" media="screen" />
+    <link href="/static/container_form.css" rel="stylesheet" type="text/css" />
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://d2m6ke2px6quvq.cloudfront.net/uploads/2020/07/15/8e817361-fe75-4520-815c-b438c0451d2b.jpg');
+  min-height:60%;
+  background-position: center;
+  background-position: 15% 20%;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme-d2 w3-center-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('projetoeTime') }}" class="w3-bar-item w3-button w3-center"><i class="fa fa-user-circle-o "></i>  Time&Projeto</a>
+  </div>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="{{ partial }}" class="w3-bar-item w3-button">Time&Projeto</a>
+  </div>
+</div>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-large">
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Análise de Crédito</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+  </div>
+</div>
+<form method="POST" action="/resultado">
+    <div class="container_form ">
+            <div class="w3-center">
+            <h3>Informe os dados abaixo para solicitar a análise</h3>
+          </div>
+            <br></br>
+
+        <div class="form_grupo">
+            <label class="form_label">Duração do Empréstimo (meses)</label>
+            <input type="number" name="dur_emp" placeholder="0" min="0" class="form_input"  id="dur_emp" required>
+        </div>
+        <div class="form_grupo">
+            <div class="form-check">
+                <label  class="text">Status do histórico de crédito</label>
+                <br>
+
+                <select name="status_emp" class="dropdown" required>
+                    <option selected disabled class="form_select_option" value="">Selecione</option>
+                    <option value="1" id="status1" class="form_select_option">1 - créditos pagos devidamente</option>
+                    <option value="2" id="status2" class="form_select_option">2 - todos os créditos neste banco pagos devidamente</option>
+                    <option value="3" id="status3" class="form_select_option">3 - créditos existentes pagos devidamente até o momento</option>
+                    <option value="4" id="status4" class="form_select_option">4 - atraso no pagamento no passado</option>
+                    <option value="5" id="status5" class="form_select_option">5 - conta crítica/outros créditos existentes (não neste banco)</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="form_grupo">
+
+            <div class="form_grupo">
+                <label for="money" class="form_label">Valor do Empréstimo</label>
+                <input type="text" name="money" placeholder="R$ 0,00" value="" min="1" class="form_input" id="money" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="valor" class="form_label">Saldo na Poupança</label>
+                <input type="text" name="valor" placeholder="R$ 0,00" value="" min="1" class="form_input" id="valor" required>
+            </div>
+
+            <div class="form_grupo">
+                <label class="form_label">Tempo empregado</label>
+                <input type="text" name="tempo" placeholder="0" min="0" class="form_input"  id="num_dep" required>
+            </div>
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Sexo" id="sex1" value="1" checked>
+                        <label class="form-check-label" for="sex1" >
+                            Masculino
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Sexo" id="sex2" value="0">
+                        <label class="form-check-label" for="sex2">
+                            Feminino
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form_grupo">
+                <label for="idade" class="form_label">Idade</label>
+                <input type="text" name="idade" placeholder="0" min="0" class="form_input" id="idade" required>
+            </div>
+            <label class="text">Moradia</label>
+            <select name="moradia" class="dropdown" required>
+                <option selected disabled class="form_select_option" value="">Selecione</option>
+                <option  class="form_select_option" value="1">1 - Aluguel</option>
+                <option  class="form_select_option" value="2">2 - Próprio</option>
+                <option  class="form_select_option" value="3">3 - Gratuito</option>
+            </select>
+            <div class="form_grupo">
+                <div class="form-check">
+                    <label class="text">Situação empregatícia </label>
+                    <select name="situacao_trabalho" class="dropdown" required>
+
+                        <option selected disabled class="form_select_option" value="">Selecione</option>
+                        <option  id="1" class="form_select_option">1 - Desempregado e não qualificado</option>
+                        <option  id="2" class="form_select_option">2 - Desempregado e qualificado</option>
+                        <option  id="3" class="form_select_option">3 - Empregado</option>
+                        <option  id="4" class="form_select_option">4 - Empregado e altamente qualificado</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <br>
+
+            <div class="submit">
+
+                <input type="hidden" name="acao" value="enviar">
+                <button type="submit" name="Submit" class="submit_btn" >Verificar</button>
+
+            </div>
+        </div>
+    </div>
+  </form>
+<script>
+    $(document).ready(function(){
+        $('#valor').mask('000.000.000.000.000,00', {reverse: true});
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+        $('#money').mask('000.000.000.000.000,00', {reverse: true});
+    });
+  </script>
+
+</body>
+</html>
